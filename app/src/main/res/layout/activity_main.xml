@@ -12,5 +12,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_demo1"
             android:text="跟随手指得小球"/>
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_demo2"
+            android:text="霓虹灯"/>
 
 </LinearLayout>
