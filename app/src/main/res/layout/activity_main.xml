@@ -16,5 +16,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_demo2"
             android:text="霓虹灯"/>
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_demo3"
+            android:text="textview相关"/>
 
 </LinearLayout>
