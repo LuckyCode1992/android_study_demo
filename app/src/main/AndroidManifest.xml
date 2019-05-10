@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".时钟相关view.Demo4Activity">
+        </activity>
         <activity android:name=".textview相关.Demo3Activity">
         </activity>
         <activity android:name=".霓虹灯效果.Demo2Activity">
