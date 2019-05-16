@@ -3,6 +3,7 @@ package com.justcode.hxl.androidstudydemo
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
 import com.justcode.hxl.androidstudydemo.跟随手指的小球.Demo1Activity
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo4.setOnClickListener {
             skip(Demo4Activity::class.java)
+        }
+        btn_demo5.setOnClickListener {
+            skip(Demo5Activity::class.java)
         }
     }
 
