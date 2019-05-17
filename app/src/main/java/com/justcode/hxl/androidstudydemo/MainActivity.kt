@@ -3,10 +3,9 @@ package com.justcode.hxl.androidstudydemo
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
-import com.justcode.hxl.androidstudydemo.ndkdemo.JNIUtil
+import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
@@ -38,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo6.setOnClickListener {
             skip(Main2Activity::class.java)
+        }
+
+        btn_demo7.setOnClickListener {
+            skip(Main3Activity::class.java)
         }
 
 
