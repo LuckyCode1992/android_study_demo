@@ -15,6 +15,18 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_sayHello
   (JNIEnv *, jobject);
 
+JNIEXPORT jint JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_sum(JNIEnv *env, jobject instance, jint x, jint y);
+
+JNIEXPORT jstring JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_addstr(JNIEnv *env, jobject instance, jstring str_);
+
+JNIEXPORT jintArray JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_increaseArrayEles(JNIEnv *env, jobject instance,
+                                                                         jintArray intArray_);
+JNIEXPORT jint JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_checkPwd(JNIEnv *env, jobject instance, jstring pwd_);
+
 #ifdef __cplusplus
 }
 #endif

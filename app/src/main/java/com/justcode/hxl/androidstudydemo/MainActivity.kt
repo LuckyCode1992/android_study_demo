@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
+import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIUtil
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
 import com.justcode.hxl.androidstudydemo.跟随手指的小球.Demo1Activity
 import com.justcode.hxl.androidstudydemo.霓虹灯效果.Demo2Activity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         btn_demo5.setOnClickListener {
             skip(Demo5Activity::class.java)
         }
-
-        val result = JNIUtil().sayHello()
-        Log.d("JNI_JNI", result)
+        btn_jni.setOnClickListener {
+            skip(JNIActivity::class.java)
+        }
     }
 
     fun skip(cls: Class<*>) {

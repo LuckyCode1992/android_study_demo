@@ -29,4 +29,10 @@
             android:id="@+id/btn_demo5"
             android:text="adapterViewFliper"/>
 
+
+    <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_jni"
+            android:text="JNI"/>
+
 </LinearLayout>
