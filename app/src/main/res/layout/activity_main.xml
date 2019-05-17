@@ -8,39 +8,70 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo1"
-            android:text="跟随手指得小球"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo2"
-            android:text="霓虹灯"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo3"
-            android:text="textview相关"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo4"
-            android:text="时钟相关"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo5"
-            android:text="adapterViewFliper"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo6"
-            android:text="stackview"/>
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_demo7"
-            android:text="progressbar"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
-    <Button android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_jni"
-            android:text="JNI"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo1"
+                    android:text="跟随手指得小球"/>
 
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo2"
+                    android:text="霓虹灯"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo3"
+                    android:text="textview相关"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo4"
+                    android:text="时钟相关"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo5"
+                    android:text="adapterViewFliper"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo6"
+                    android:text="stackview"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo7"
+                    android:text="progressbar"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo8"
+                    android:text="viewswitcher"/>
+
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_jni"
+                    android:text="JNI"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -8,6 +8,7 @@ import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
+import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
 import com.justcode.hxl.androidstudydemo.跟随手指的小球.Demo1Activity
 import com.justcode.hxl.androidstudydemo.霓虹灯效果.Demo2Activity
@@ -41,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         btn_demo7.setOnClickListener {
             skip(Main3Activity::class.java)
+        }
+        btn_demo8.setOnClickListener {
+            skip(Main4Activity::class.java)
         }
 
 

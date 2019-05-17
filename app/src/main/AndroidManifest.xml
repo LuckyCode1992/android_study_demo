@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".viewswitcher.Main4Activity">
+        </activity>
         <activity android:name=".progressbar系列.Main3Activity">
         </activity>
         <activity android:name=".stackview.Main2Activity">
