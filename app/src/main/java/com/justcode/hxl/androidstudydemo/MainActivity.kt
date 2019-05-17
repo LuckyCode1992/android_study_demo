@@ -7,6 +7,7 @@ import android.util.Log
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIUtil
+import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
 import com.justcode.hxl.androidstudydemo.跟随手指的小球.Demo1Activity
@@ -35,6 +36,13 @@ class MainActivity : AppCompatActivity() {
         btn_demo5.setOnClickListener {
             skip(Demo5Activity::class.java)
         }
+        btn_demo6.setOnClickListener {
+            skip(Main2Activity::class.java)
+        }
+
+
+
+
         btn_jni.setOnClickListener {
             skip(JNIActivity::class.java)
         }
