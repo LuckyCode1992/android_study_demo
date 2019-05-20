@@ -43,4 +43,15 @@
             android:text="字符串拼接"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_array"
+            android:text="数组"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tv_array"
+            android:text="数组结果："
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>

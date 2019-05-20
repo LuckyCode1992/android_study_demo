@@ -23,5 +23,10 @@ class JNIActivity : AppCompatActivity() {
             val addstr = jniUtil.addstr("I am java ")
             tv_stringadd.text = addstr
         }
+        btn_array.setOnClickListener {
+            val intArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+            val increaseArrayEles = jniUtil.increaseArrayEles(intArray)
+            tv_array.text = increaseArrayEles.contentToString()
+        }
     }
 }
