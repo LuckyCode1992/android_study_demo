@@ -94,6 +94,15 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_checkPwd(JNIEnv *env, job
     return code;
 
 }
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSayHello(JNIEnv *env, jobject instance){
+
+}
+
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSum(JNIEnv *env, jobject instance){
+
+}
 
 
 
