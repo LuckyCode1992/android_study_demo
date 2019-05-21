@@ -6,37 +6,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.justcode.hxl.androidstudydemo.R
+import kotlinx.android.synthetic.main.activity_main4.*
 
 const val NUMBER_PRE_SCREEN = 12
 
 class Main4Activity : AppCompatActivity() {
 
     val items = arrayListOf<DataItem>(
-        DataItem("0",R.drawable.a),
-        DataItem("1",R.drawable.b),
-        DataItem("2",R.drawable.c),
-        DataItem("3",R.drawable.d),
-        DataItem("4",R.drawable.e),
-        DataItem("5",R.drawable.f),
-        DataItem("6",R.drawable.g),
-        DataItem("7",R.drawable.h),
-        DataItem("8",R.drawable.i),
-        DataItem("9",R.drawable.j),
-        DataItem("10",R.drawable.k),
-        DataItem("11",R.drawable.m),
-        DataItem("12",R.drawable.n),
-        DataItem("13",R.drawable.l),
-        DataItem("14",R.drawable.o),
-        DataItem("15",R.drawable.p),
-        DataItem("16",R.drawable.b),
-        DataItem("17",R.drawable.a),
-        DataItem("18",R.drawable.q),
-        DataItem("19",R.drawable.q),
-        DataItem("20",R.drawable.q)
+        DataItem("0", R.drawable.a),
+        DataItem("1", R.drawable.b),
+        DataItem("2", R.drawable.c),
+        DataItem("3", R.drawable.d),
+        DataItem("4", R.drawable.e),
+        DataItem("5", R.drawable.f),
+        DataItem("6", R.drawable.g),
+        DataItem("7", R.drawable.h),
+        DataItem("8", R.drawable.i),
+        DataItem("9", R.drawable.j),
+        DataItem("10", R.drawable.k),
+        DataItem("11", R.drawable.m),
+        DataItem("12", R.drawable.n),
+        DataItem("13", R.drawable.l),
+        DataItem("14", R.drawable.o),
+        DataItem("15", R.drawable.p),
+        DataItem("16", R.drawable.b),
+        DataItem("17", R.drawable.a),
+        DataItem("18", R.drawable.q),
+        DataItem("19", R.drawable.q),
+        DataItem("20", R.drawable.q)
 
 
     )
@@ -83,7 +82,45 @@ class Main4Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main4)
 
+        btn_pre.setOnClickListener {
+            pre(it)
+        }
+        btn_next.setOnClickListener {
+            next(it)
+        }
 
+        screenCount = if (items.size % NUMBER_PRE_SCREEN == 0) {
+            items.size / NUMBER_PRE_SCREEN
+        } else {
+            items.size / NUMBER_PRE_SCREEN + 1
+        }
+        viewswitcher.setFactory(ViewSwitcher.ViewFactory {
+            LayoutInflater.from(this).inflate(R.layout.slidelistview, null)
+        })
+        next(null)
+
+
+    }
+
+    private fun next(view: View?) {
+        if (screenNo < screenCount - 1) {
+            screenNo++
+            viewswitcher.setInAnimation(this, R.anim.slide_in_right)
+            viewswitcher.setOutAnimation(this, R.anim.slide_out_left)
+
+            (viewswitcher.nextView as GridView).adapter = adapter
+            viewswitcher.showNext()
+
+        }
+    }
+    fun pre(view: View?){
+        if (screenNo>0){
+            screenNo--
+            viewswitcher.setInAnimation(this, R.anim.slide_in_left)
+            viewswitcher.setOutAnimation(this, R.anim.slide_out_right)
+            (viewswitcher.nextView as GridView).adapter = adapter
+            viewswitcher.showPrevious()
+        }
     }
 }
 
