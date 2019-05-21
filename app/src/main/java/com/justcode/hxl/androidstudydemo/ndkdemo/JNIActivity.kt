@@ -28,5 +28,10 @@ class JNIActivity : AppCompatActivity() {
             val increaseArrayEles = jniUtil.increaseArrayEles(intArray)
             tv_array.text = increaseArrayEles.contentToString()
         }
+        btn_pwd.setOnClickListener {
+            val pwdString = et_pwd.text.toString()
+            val result = jniUtil.checkPwd(pwdString)
+            tv_pwd.text = "密码校验结果:$result"
+        }
     }
 }

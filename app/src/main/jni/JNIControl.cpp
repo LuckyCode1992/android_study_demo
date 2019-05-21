@@ -71,7 +71,7 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_increaseArrayEles(JNIEnv 
     jint num[size];
     for (int i = 0; i < size; i++) {
         num[i] = body[i] + 10;
-        LOGI("num[i]:%d-%d", i,   num[i]);
+        LOGI("num[i]:%d-%d", i, num[i]);
     }
     // 4.返回结果
 
@@ -82,10 +82,18 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_increaseArrayEles(JNIEnv 
 
 }
 
-//JNIEXPORT jint JNICALL
-//Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_checkPwd(JNIEnv *env, jobject instance, jstring pwd_) {
-//
-//}
+
+JNIEXPORT jint JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_checkPwd(JNIEnv *env, jobject instance, jstring pwd_) {
+
+    //密码
+    char *orginPwd = "123456";
+    char *formPwd = jstringToChar(env, pwd_);
+    //比较字符串是否相同
+    int code = strcmp(orginPwd, formPwd);
+    return code;
+
+}
 
 
 
