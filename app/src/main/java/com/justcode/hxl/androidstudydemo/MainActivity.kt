@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
+import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
@@ -45,6 +46,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo8.setOnClickListener {
             skip(Main4Activity::class.java)
+        }
+        btn_demo9.setOnClickListener {
+            skip(Main5Activity::class.java)
         }
 
 
