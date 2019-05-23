@@ -27,10 +27,11 @@ public class JNIUtil {
     public native void callBackSum();
 
     public int sumJava(int x, int y) {
+        Log.d("JNI_JNI", "java:" + (x + y));
         return x + y;
     }
 
-    public void sayHelloJava() {
-        Log.d("JNI_JNI", "I AM JAVA HELLO");
+    public static void sayHelloJava(String s) {
+        Log.d("JNI_JNI", "静态方法被调用:s=" + s);
     }
 }

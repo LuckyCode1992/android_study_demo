@@ -94,14 +94,33 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_checkPwd(JNIEnv *env, job
     return code;
 
 }
-JNIEXPORT void JNICALL
-Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSayHello(JNIEnv *env, jobject instance){
 
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSayHello(JNIEnv *env, jobject instance) {
+//1.得到字节码
+    jclass jclazz = (*env).FindClass("com/justcode/hxl/androidstudydemo/ndkdemo/JNIUtil");
+//2.得到方法
+    jmethodID jmethodIDs = env->GetStaticMethodID(jclazz, "sayHelloJava", "(Ljava/lang/String;)V");
+
+//3.实例化该类
+    //jobject jobject0 = env->AllocObject(jclazz);
+//4.调用方法
+    jstring str = env->NewStringUTF("哈哈哈");
+    env->CallStaticVoidMethod(jclazz, jmethodIDs, str);
 }
 
 JNIEXPORT void JNICALL
-Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSum(JNIEnv *env, jobject instance){
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSum(JNIEnv *env, jobject instance) {
+//1.得到字节码
+    jclass jclazz = (*env).FindClass("com/justcode/hxl/androidstudydemo/ndkdemo/JNIUtil");
+//2.得到方法
+    jmethodID jmethodIDs = env->GetMethodID(jclazz, "sumJava", "(II)I");
 
+//3.实例化该类
+    jobject jobject0 = env->AllocObject(jclazz);
+//4.调用方法
+    jint value = env->CallIntMethod(jobject0, jmethodIDs, 55, 25);
+    LOGI("value:%d", value);
 }
 
 

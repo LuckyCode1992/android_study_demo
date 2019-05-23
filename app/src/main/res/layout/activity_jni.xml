@@ -79,4 +79,15 @@
             android:text="密码校验结果："
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_c2java_sum"
+            android:text="c调用java 求和"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_c2java_sayhello"
+            android:text="c调用java 静态方法"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>

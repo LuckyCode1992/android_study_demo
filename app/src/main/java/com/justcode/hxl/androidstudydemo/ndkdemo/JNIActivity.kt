@@ -33,5 +33,11 @@ class JNIActivity : AppCompatActivity() {
             val result = jniUtil.checkPwd(pwdString)
             tv_pwd.text = "密码校验结果:$result"
         }
+        btn_c2java_sum.setOnClickListener {
+            jniUtil.callBackSum()
+        }
+        btn_c2java_sayhello.setOnClickListener {
+            jniUtil.callBackSayHello()
+        }
     }
 }
