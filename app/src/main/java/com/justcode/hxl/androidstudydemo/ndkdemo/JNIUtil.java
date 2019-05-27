@@ -34,4 +34,28 @@ public class JNIUtil {
     public static void sayHelloJava(String s) {
         Log.d("JNI_JNI", "静态方法被调用:s=" + s);
     }
+
+    /**
+     * C调用java 更新UI
+     */
+    public native void c2javashow();
+
+    public void javashow() {
+        Log.d("JNI_JNI", "javashow");
+
+        //下面会一直为null  因为，C中是用反射创建了一个新的jniutil，新的jnituil调用了这个方法，所以，这里的back是null
+        if (jniBack0 != null)
+            jniBack0.call();
+    }
+
+    JniBack jniBack0;
+
+    public void setOnJniBack(JniBack jinBack) {
+        jniBack0 = jinBack;
+    }
+}
+
+interface JniBack {
+    void call();
+
 }

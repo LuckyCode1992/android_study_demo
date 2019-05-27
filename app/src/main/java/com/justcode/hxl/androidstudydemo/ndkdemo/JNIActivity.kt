@@ -3,6 +3,7 @@ package com.justcode.hxl.androidstudydemo.ndkdemo
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.justcode.hxl.androidstudydemo.R
 import kotlinx.android.synthetic.main.activity_jni.*
 
@@ -39,5 +40,19 @@ class JNIActivity : AppCompatActivity() {
         btn_c2java_sayhello.setOnClickListener {
             jniUtil.callBackSayHello()
         }
+        btn_c2java_show.setOnClickListener {
+//            jniUtil.c2javashow()
+            this.c2javashow2()
+        }
+    }
+
+    /**
+     * C调用java 更新UI
+     */
+    external fun c2javashow2()
+
+    fun javashow() {
+        Log.d("JNI_JNI", "c调用java，更新了UI")
+        tv_c2java_show.text = "c调用java，更新了UI"
     }
 }

@@ -33,6 +33,12 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSayHello(JNIEnv *
 JNIEXPORT void JNICALL
 Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSum(JNIEnv *env, jobject instance);
 
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_c2javashow(JNIEnv *env, jobject instance);
+
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_c2javashow2(JNIEnv *env, jobject instance);
+
 #ifdef __cplusplus
 }
 #endif

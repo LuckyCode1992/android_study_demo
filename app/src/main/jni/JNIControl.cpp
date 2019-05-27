@@ -124,4 +124,42 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_callBackSum(JNIEnv *env, 
 }
 
 
+/**
+ *
+ * @param env
+ * @param instance  谁调用了当前这个方法对应的jni的java的接口，就是谁的实例
+ */
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_c2javashow(JNIEnv *env, jobject instance) {
+    //1.得到字节码
+    jclass jclazz = (*env).FindClass("com/justcode/hxl/androidstudydemo/ndkdemo/JNIActivity");
+//2.得到方法
+    jmethodID jmethodIDs = env->GetMethodID(jclazz, "javashow", "()V");
+
+//3.实例化该类
+    jobject jobject0 = env->AllocObject(jclazz);
+//4.调用方法
+    env->CallVoidMethod(jobject0, jmethodIDs);
+}
+
+
+/**
+ *
+ * @param env
+ * @param instance  谁调用了当前这个方法对应的jni的java的接口，就是谁的实例
+ */
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_c2javashow2(JNIEnv *env, jobject instance) {
+    //1.得到字节码
+    jclass jclazz = (*env).FindClass("com/justcode/hxl/androidstudydemo/ndkdemo/JNIActivity");
+//2.得到方法
+    jmethodID jmethodIDs = env->GetMethodID(jclazz, "javashow", "()V");
+
+//3.实例化该类
+//    jobject jobject0 = env->AllocObject(jclazz);
+//4.调用方法
+    env->CallVoidMethod(instance, jmethodIDs);
+}
+
+
 
