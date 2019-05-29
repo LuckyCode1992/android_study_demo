@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             skip(JNIActivity::class.java)
         }
         btn_mtxx.setOnClickListener {
-            Toast.makeText(this,"目前因为使用了自己的C内容，会生成多种cpu架构的so，而mtxx只有一种放弃使用的so，这里会找不到，但是，单独使用没有问题")
+            Toast.makeText(this,"目前因为使用了自己的C内容，会生成多种cpu架构的so，而mtxx只有一种放弃使用的so，这里会找不到，但是，单独使用没有问题",Toast.LENGTH_LONG).show()
             return@setOnClickListener
             skip(MTXXActivity::class.java)
         }
