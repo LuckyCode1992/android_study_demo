@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".fragment.Main6Activity">
+        </activity>
         <activity android:name=".mtxx.MTXXActivity">
         </activity>
         <activity android:name=".calendarview.Main5Activity">

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
+import com.justcode.hxl.androidstudydemo.fragment.Main6Activity
 import com.justcode.hxl.androidstudydemo.mtxx.MTXXActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo9.setOnClickListener {
             skip(Main5Activity::class.java)
+        }
+        btn_demo10.setOnClickListener {
+            skip(Main6Activity::class.java)
         }
 
 
