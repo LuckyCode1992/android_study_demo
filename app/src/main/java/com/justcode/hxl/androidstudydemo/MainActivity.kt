@@ -3,8 +3,10 @@ package com.justcode.hxl.androidstudydemo
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
+import com.justcode.hxl.androidstudydemo.mtxx.MTXXActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
@@ -56,6 +58,11 @@ class MainActivity : AppCompatActivity() {
 
         btn_jni.setOnClickListener {
             skip(JNIActivity::class.java)
+        }
+        btn_mtxx.setOnClickListener {
+            Toast.makeText(this,"目前因为使用了自己的C内容，会生成多种cpu架构的so，而mtxx只有一种放弃使用的so，这里会找不到，但是，单独使用没有问题")
+            return@setOnClickListener
+            skip(MTXXActivity::class.java)
         }
     }
 
