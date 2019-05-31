@@ -39,7 +39,11 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_c2javashow(JNIEnv *env, j
 JNIEXPORT void JNICALL
 Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_c2javashow2(JNIEnv *env, jobject instance);
 
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_uninstaListetner(JNIEnv *env, jobject instance, jstring name_);
+
 #ifdef __cplusplus
 }
 #endif
 #endif
+

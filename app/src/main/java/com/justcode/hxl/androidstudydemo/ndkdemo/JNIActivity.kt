@@ -44,12 +44,18 @@ class JNIActivity : AppCompatActivity() {
 //            jniUtil.c2javashow()
             this.c2javashow2()
         }
+
+        Log.d("JNI_JNI","/data/data/"+packageName)
+        uninstaListetner("/data/data/"+packageName)
     }
 
     /**
      * C调用java 更新UI
      */
     external fun c2javashow2()
+
+    // 卸载弹出网页
+    external fun uninstaListetner(name: String)
 
     fun javashow() {
         Log.d("JNI_JNI", "c调用java，更新了UI")

@@ -12,6 +12,8 @@
 #include <jni.h>
 #include <cstring>
 #include <cstdlib>
+#include <unistd.h>
+#include <sys/wait.h>
 #include "com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil.h"
 //king_bird_ndkjnidemo_JNIUtils_printStringByJni 包名+文件名+文件内方法名
 JNIEXPORT jstring JNICALL Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIUtil_sayHello
@@ -161,5 +163,38 @@ Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_c2javashow2(JNIEnv *e
     env->CallVoidMethod(instance, jmethodIDs);
 }
 
+
+JNIEXPORT void JNICALL
+Java_com_justcode_hxl_androidstudydemo_ndkdemo_JNIActivity_uninstaListetner(JNIEnv *env, jobject instance,
+                                                                            jstring name_) {
+    //返回3个值，>0 ：父进程id，等于0 子进程id，负数就是出错了
+    int code = fork();
+    LOGI("code:%d", code);
+//    char *pakName = jstringToChar(env, name_);
+//    LOGI("pakName:%d", pakName);
+    if (code == 0) {
+        //判断软件是否被卸载
+        int flag = 1;
+        while (flag) {
+            sleep(1);
+            LOGI("flag:%d", flag);
+            FILE *file = fopen("/data/data/com.justcode.hxl.androidstudydemo", "r");
+            if (file == NULL) {
+                //应用对应的文件夹不存在，说明被卸载了
+                execlp("am", "am", "start", "--user", "0", "-a", "android.intent.action.VIEW", "-d",
+                       "https://www.baidu.com", (char *) NULL);
+                LOGI("flag:%d", flag);
+                LOGI("文件为null了");
+                flag = 0;
+            }
+        }
+    } else if (code > 0) {
+        //父进程
+    } else {
+        //出错了
+    }
+
+
+}
 
 

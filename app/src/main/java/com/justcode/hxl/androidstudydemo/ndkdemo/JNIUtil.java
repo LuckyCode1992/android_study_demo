@@ -21,6 +21,8 @@ public class JNIUtil {
 
     public native int checkPwd(String pwd);
 
+
+
     //C调用java
     public native void callBackSayHello();
 
