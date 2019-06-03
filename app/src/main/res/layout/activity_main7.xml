@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".intent的部分功能.Main7Activity">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <Button
+                    android:id="@+id/btn_getphone"
+                    android:text="获取联系人手机号"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/tv_phone"
+                    android:text="联系人"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_call"
+                    android:text="去拨号"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

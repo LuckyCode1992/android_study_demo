@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
 import com.justcode.hxl.androidstudydemo.fragment.Main6Activity
+import com.justcode.hxl.androidstudydemo.intent的部分功能.Main7Activity
 import com.justcode.hxl.androidstudydemo.mtxx.MTXXActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
@@ -57,7 +58,9 @@ class MainActivity : AppCompatActivity() {
             skip(Main6Activity::class.java)
         }
 
-
+        btn_demo11.setOnClickListener {
+            skip(Main7Activity::class.java)
+        }
 
 
         btn_jni.setOnClickListener {
