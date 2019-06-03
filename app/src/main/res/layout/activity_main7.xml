@@ -29,6 +29,21 @@
                     android:text="去拨号"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_edit"
+                    android:text="编辑联系人"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_home"
+                    android:text="回到桌面（HOME）"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:id="@+id/btn_web"
+                    android:text="打开百度"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 

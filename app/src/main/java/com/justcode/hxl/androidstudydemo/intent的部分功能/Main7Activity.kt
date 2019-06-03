@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_main7.*
 class Main7Activity : AppCompatActivity() {
     val PICK_CONTACT = 0
     var phone0 = ""
+    var contactId0 = "1"
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,28 @@ class Main7Activity : AppCompatActivity() {
             val intent = Intent()
             intent.action = Intent.ACTION_DIAL
             intent.data = Uri.parse("tel:${phone0}")
+            startActivity(intent)
+        }
+        btn_edit.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_INSERT_OR_EDIT
+            val data = "content://com.android.contacts/contacts/"+contactId0
+            intent.data = Uri.parse(data)
+            startActivity(intent)
+        }
+
+        btn_home.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_MAIN
+            intent.addCategory(Intent.CATEGORY_HOME)
+            startActivity(intent)
+        }
+        btn_web.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_VIEW
+            val data = "https://www.baidu.com"
+            val uri  = Uri.parse(data)
+            intent.data = uri
             startActivity(intent)
         }
     }
@@ -61,9 +84,10 @@ class Main7Activity : AppCompatActivity() {
                     val cursor = cursorLoader.loadInBackground()
                     //查询指定联系人
                     if (cursor?.moveToFirst() == true) {
-//                        val contactId = cursor.getString(
-//                            cursor.getColumnIndex(ContactsContract.Contacts._ID)
-//                        )
+                        val contactId = cursor.getString(
+                            cursor.getColumnIndex(ContactsContract.Contacts._ID)
+                        )
+                        contactId0 = contactId
                         //联系人名字
                         val name = cursor.getString(
                             cursor.getColumnIndexOrThrow(
