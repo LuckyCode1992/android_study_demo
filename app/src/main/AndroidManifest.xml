@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.justcode.hxl.androidstudydemo">
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
 
     <application
@@ -13,6 +14,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".资源文件xml相关.Main8Activity">
+        </activity>
         <activity android:name=".intent的部分功能.Main7Activity">
         </activity>
         <activity android:name=".guolu.GuoluActivity">
