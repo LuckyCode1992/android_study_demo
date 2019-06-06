@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
 import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
+import com.justcode.hxl.androidstudydemo.canva_paint_path.Main9Activity
 import com.justcode.hxl.androidstudydemo.fragment.Main6Activity
 import com.justcode.hxl.androidstudydemo.intent的部分功能.Main7Activity
 import com.justcode.hxl.androidstudydemo.mtxx.MTXXActivity
@@ -66,7 +67,9 @@ class MainActivity : AppCompatActivity() {
         btn_demo12.setOnClickListener {
             skip(Main8Activity::class.java)
         }
-
+        btn_demo13.setOnClickListener {
+            skip(Main9Activity::class.java)
+        }
 
 
 

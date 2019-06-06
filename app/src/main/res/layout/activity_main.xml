@@ -85,6 +85,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo12"
                     android:text="资源文件相关"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo13"
+                    android:text="canvas paint path相关"/>
 
 
             <Button
