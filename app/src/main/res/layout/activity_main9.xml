@@ -6,55 +6,89 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".canva_paint_path.Main9Activity">
-    <com.justcode.hxl.androidstudydemo.canva_paint_path.MyView
-            android:id="@+id/myview"
-            android:layout_above="@+id/ll2"
+
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    <LinearLayout
-            android:id="@+id/ll"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <Button
-                android:id="@+id/btn_stroke"
-                android:text="stroke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btn_fill"
-                android:text="fill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btn_fill_and_stroke"
-                android:text="fill_and_stroke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-            android:id="@+id/ll2"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <Button
-                android:id="@+id/btn_update_color"
-                android:text="换颜色"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btn_add_Shader"
-                android:text="加Shader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btn_clear_Shader"
-                android:text="清除shader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="640dp">
+
+                <com.justcode.hxl.androidstudydemo.canva_paint_path.MyView
+                        android:id="@+id/myview"
+                        android:layout_above="@+id/ll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                <LinearLayout
+                        android:id="@+id/ll"
+                        android:orientation="horizontal"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <Button
+                            android:id="@+id/btn_stroke"
+                            android:text="stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <Button
+                            android:id="@+id/btn_fill"
+                            android:text="fill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <Button
+                            android:id="@+id/btn_fill_and_stroke"
+                            android:text="fill_and_stroke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/ll2"
+                        android:orientation="horizontal"
+                        android:layout_above="@+id/ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <Button
+                            android:id="@+id/btn_update_color"
+                            android:text="换颜色"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <Button
+                            android:id="@+id/btn_add_Shader"
+                            android:text="加Shader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <Button
+                            android:id="@+id/btn_clear_Shader"
+                            android:text="清除shader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="640dp">
+                <com.justcode.hxl.androidstudydemo.canva_paint_path.PathView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

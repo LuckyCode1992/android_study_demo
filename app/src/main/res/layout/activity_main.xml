@@ -90,6 +90,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo13"
                     android:text="canvas paint path相关"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo14"
+                    android:text="画画板demo"/>
 
 
             <Button
