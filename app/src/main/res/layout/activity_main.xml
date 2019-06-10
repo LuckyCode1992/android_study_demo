@@ -95,6 +95,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo14"
                     android:text="画画板demo"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo15"
+                    android:text="弹球游戏"/>
 
 
             <Button
