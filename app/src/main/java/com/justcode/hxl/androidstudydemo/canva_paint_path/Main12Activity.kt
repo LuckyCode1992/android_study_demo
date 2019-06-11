@@ -15,7 +15,7 @@ class Main12Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(MyView(this, R.drawable.aa))
+        setContentView(MyView(this, R.drawable.g))
     }
 
     private class MyView(context: Context, drawableRes: Int) : View(context) {

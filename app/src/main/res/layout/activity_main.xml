@@ -113,6 +113,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo16"
                     android:text="可揉动的图片"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo17"
+                    android:text="属性动画案例"/>
 
 
             <Button
