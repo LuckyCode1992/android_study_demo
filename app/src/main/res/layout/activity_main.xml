@@ -65,41 +65,54 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo8"
                     android:text="viewswitcher"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo9"
                     android:text="calendarview"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo10"
                     android:text="fragment使用"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo11"
                     android:text="intent部分使用"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo12"
                     android:text="资源文件相关"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo13"
                     android:text="canvas paint path相关"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo14"
                     android:text="画画板demo"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo15"
                     android:text="弹球游戏"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo16"
+                    android:text="可揉动的图片"/>
 
 
             <Button
@@ -107,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_jni"
                     android:text="JNI"/>
+
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

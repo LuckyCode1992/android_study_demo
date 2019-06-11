@@ -14,6 +14,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".canva_paint_path.Main12Activity">
+        </activity>
         <activity android:name=".canva_paint_path.Main11Activity">
         </activity>
         <activity android:name=".canva_paint_path.Main10Activity">
