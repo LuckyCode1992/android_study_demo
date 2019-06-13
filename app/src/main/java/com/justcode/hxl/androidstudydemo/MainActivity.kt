@@ -17,6 +17,7 @@ import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
 import com.justcode.hxl.androidstudydemo.progressbar系列.Main3Activity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
 import com.justcode.hxl.androidstudydemo.surface_view.Main14Activity
+import com.justcode.hxl.androidstudydemo.surface_view.Main15Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
 import com.justcode.hxl.androidstudydemo.动画案例.Main13Activity
@@ -89,6 +90,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo18.setOnClickListener {
             skip(Main14Activity::class.java)
+        }
+        btn_demo19.setOnClickListener {
+            skip(Main15Activity::class.java)
         }
 
 
