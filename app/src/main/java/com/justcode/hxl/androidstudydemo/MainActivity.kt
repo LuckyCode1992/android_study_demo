@@ -21,6 +21,7 @@ import com.justcode.hxl.androidstudydemo.surface_view.Main15Activity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
 import com.justcode.hxl.androidstudydemo.动画案例.Main13Activity
+import com.justcode.hxl.androidstudydemo.数据存储和io.Main16Activity
 import com.justcode.hxl.androidstudydemo.时钟相关view.Demo4Activity
 import com.justcode.hxl.androidstudydemo.资源文件xml相关.Main8Activity
 import com.justcode.hxl.androidstudydemo.跟随手指的小球.Demo1Activity
@@ -93,6 +94,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo19.setOnClickListener {
             skip(Main15Activity::class.java)
+        }
+        btn_demo20.setOnClickListener {
+            skip(Main16Activity::class.java)
         }
 
 
