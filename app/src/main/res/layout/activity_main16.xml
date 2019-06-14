@@ -9,17 +9,45 @@
         tools:context=".数据存储和io.Main16Activity">
     <Button
             android:id="@+id/btn_setSp"
-            android:text="将当前时间保存"
+            android:text="sp将当前时间保存"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <Button
             android:id="@+id/btn_getSp"
-            android:text="将保存的时间拿出来"
+            android:text="sp将保存的时间拿出来"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_Sp_clear"
+            android:text="清除sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <TextView
             android:id="@+id/tv_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_setFile"
+            android:text="File将当前时间保存"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_getFile"
+            android:text="File将当前时间拿出来"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_file_clear"
+            android:text="清除file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tv_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
 
 </LinearLayout>

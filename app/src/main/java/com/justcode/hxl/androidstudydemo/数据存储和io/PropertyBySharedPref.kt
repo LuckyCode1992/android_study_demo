@@ -14,6 +14,12 @@ class PropertyBySharedPref<T>(private val keyName: String = "", private val defa
         val spName: String = "androidstudydemo_name"
         private val sharedPreferences: SharedPreferences =
             MyApp.context!!.getSharedPreferences(spName, Context.MODE_PRIVATE)
+
+        fun clear() {
+            val edit = sharedPreferences.edit()
+            edit.clear()
+            edit.apply()
+        }
     }
 
     override fun getValue(thisRef: Any, property: KProperty<*>): T {

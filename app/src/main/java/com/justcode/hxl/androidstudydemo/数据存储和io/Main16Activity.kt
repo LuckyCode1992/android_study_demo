@@ -17,6 +17,19 @@ class Main16Activity : AppCompatActivity() {
         btn_getSp.setOnClickListener {
             tv_sp.text = timeLong.toString()
         }
+        btn_Sp_clear.setOnClickListener {
+            PropertyBySharedPref.clear()
+        }
+
+        btn_setFile.setOnClickListener {
+            FileUtil.write(content = System.currentTimeMillis().toString(), context = this)
+        }
+        btn_getFile.setOnClickListener {
+            tv_file.text = FileUtil.read(context = this)
+        }
+        btn_file_clear.setOnClickListener {
+            FileUtil.delFile(context = this)
+        }
 
 
     }
