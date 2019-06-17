@@ -11,6 +11,7 @@ import com.justcode.hxl.androidstudydemo.canva_paint_path.Main11Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main12Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main9Activity
 import com.justcode.hxl.androidstudydemo.fragment.Main6Activity
+import com.justcode.hxl.androidstudydemo.gesture.Gesture1Activity
 import com.justcode.hxl.androidstudydemo.intent的部分功能.Main7Activity
 import com.justcode.hxl.androidstudydemo.mtxx.MTXXActivity
 import com.justcode.hxl.androidstudydemo.ndkdemo.JNIActivity
@@ -97,6 +98,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo20.setOnClickListener {
             skip(Main16Activity::class.java)
+        }
+        btn_demo21.setOnClickListener {
+            skip(Gesture1Activity::class.java)
         }
 
 

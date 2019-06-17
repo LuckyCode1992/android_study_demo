@@ -135,6 +135,12 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo20"
                     android:text="数据存储和io"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo21"
+                    android:text="手势demo 缩放图片"/>
+
 
             <Button
                     android:layout_width="match_parent"
