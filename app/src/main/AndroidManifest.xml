@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
             android:name=".MyApp"
@@ -15,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".gesture.Gestture2Activity">
+        </activity>
         <activity android:name=".gesture.Gesture1Activity">
         </activity>
         <activity android:name=".数据存储和io.Main16Activity">

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".gesture.Gestture2Activity">
+
+    <TextView
+            android:text="请在蓝框中输入手势"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+            android:background="#56aeff"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+        <android.gesture.GestureOverlayView
+                android:id="@+id/gestureView1"
+                android:gestureStrokeType="single"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </android.gesture.GestureOverlayView>
+    </RelativeLayout>
+
+    <EditText
+            android:id="@+id/et_gesture_name"
+            android:hint="请输入手势名字"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_save"
+            android:text="保存"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="在下面黄色区域验证手势"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+            android:background="#ffff00"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+        <android.gesture.GestureOverlayView
+                android:id="@+id/gestureView2"
+                android:gestureStrokeType="single"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </android.gesture.GestureOverlayView>
+
+    </RelativeLayout>
+</LinearLayout>
