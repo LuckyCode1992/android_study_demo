@@ -10,6 +10,7 @@ import com.justcode.hxl.androidstudydemo.canva_paint_path.Main10Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main11Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main12Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main9Activity
+import com.justcode.hxl.androidstudydemo.content_provider.ContentProvider_wordsActivity
 import com.justcode.hxl.androidstudydemo.fragment.Main6Activity
 import com.justcode.hxl.androidstudydemo.gesture.Gestture2Activity
 import com.justcode.hxl.androidstudydemo.gesture.Gesture1Activity
@@ -105,6 +106,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo22.setOnClickListener {
             skip(Gestture2Activity::class.java)
+        }
+        btn_demo23.setOnClickListener {
+            skip(ContentProvider_wordsActivity::class.java)
         }
 
 
