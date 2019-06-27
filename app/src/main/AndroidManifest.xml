@@ -28,6 +28,11 @@
         <service android:name=".service.BindService"/>
         <service android:name=".service.NorService"/>
         <service android:name=".service.MyIntentService"/>
+        <service android:name=".service.AidlService">
+            <intent-filter>
+                <action android:name="com.justcode.hxl.androidstudydemo.service.action.AIDL_SERVICE"/>
+            </intent-filter>
+        </service>
 
         <activity android:name=".content_provider.ContentProvider_wordsActivity">
         </activity>

@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_service.*
 class ServiceActivity : AppCompatActivity() {
 
     lateinit var binder: BindService.MyBinder
+    var catService: IMyAidlInterface? = null
 
     val coon = object : ServiceConnection {
 
@@ -28,6 +29,18 @@ class ServiceActivity : AppCompatActivity() {
         override fun onServiceConnected(componentName: ComponentName, ibinder: IBinder) {
             Log.d("BindService_", "onServiceConnected")
             binder = ibinder as BindService.MyBinder
+        }
+
+    }
+    val conn_room = object : ServiceConnection {
+        override fun onServiceDisconnected(p0: ComponentName?) {
+            catService = null
+
+        }
+
+        override fun onServiceConnected(componentName: ComponentName?, ibinder: IBinder?) {
+            //获取远程service的onbind方法返回的对象的代理
+            catService = IMyAidlInterface.Stub.asInterface(ibinder)
         }
 
     }
@@ -58,5 +71,19 @@ class ServiceActivity : AppCompatActivity() {
             intent.setClass(this, MyIntentService::class.java)
             startService(intent)
         }
+        btn_bind_rooom.setOnClickListener {
+            val intent = Intent()
+            intent.action = "com.justcode.hxl.androidstudydemo.service.action.AIDL_SERVICE"
+            intent.`package` = packageName
+            bindService(intent, conn_room, Service.BIND_AUTO_CREATE)
+        }
+        btn_get_room.setOnClickListener {
+            Toast.makeText(this, "name:${catService?.color}-weight:${catService?.wight}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unbindService(conn_room)
     }
 }
