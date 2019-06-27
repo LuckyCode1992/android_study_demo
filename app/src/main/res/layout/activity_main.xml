@@ -150,6 +150,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo23"
                     android:text="contentprovider使用 单词"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo24"
+                    android:text="service简单demo"/>
 
 
             <Button
