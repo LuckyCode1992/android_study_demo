@@ -26,6 +26,8 @@
                 android:exported="true"/>
 
         <service android:name=".service.BindService"/>
+        <service android:name=".service.NorService"/>
+        <service android:name=".service.MyIntentService"/>
 
         <activity android:name=".content_provider.ContentProvider_wordsActivity">
         </activity>

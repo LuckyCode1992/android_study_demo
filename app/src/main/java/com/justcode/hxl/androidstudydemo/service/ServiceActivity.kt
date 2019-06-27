@@ -47,5 +47,16 @@ class ServiceActivity : AppCompatActivity() {
         btn_get.setOnClickListener {
             Toast.makeText(this, "service的count：${binder.count}", Toast.LENGTH_SHORT).show()
         }
+
+        btn_start_nor.setOnClickListener {
+            val intent = Intent()
+            intent.setClass(this, NorService::class.java)
+            startService(intent)
+        }
+        btn_start_intentservice.setOnClickListener {
+            val intent = Intent()
+            intent.setClass(this, MyIntentService::class.java)
+            startService(intent)
+        }
     }
 }
