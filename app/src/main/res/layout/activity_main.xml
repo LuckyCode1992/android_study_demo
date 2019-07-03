@@ -155,6 +155,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo24"
                     android:text="service简单demo"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo25"
+                    android:text="广播简单demo"/>
 
 
             <Button

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.justcode.hxl.androidstudydemo.adapterviewfipper.Demo5Activity
+import com.justcode.hxl.androidstudydemo.broadcast.BoradCastActivity
 import com.justcode.hxl.androidstudydemo.calendarview.Main5Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main10Activity
 import com.justcode.hxl.androidstudydemo.canva_paint_path.Main11Activity
@@ -114,7 +115,9 @@ class MainActivity : AppCompatActivity() {
         btn_demo24.setOnClickListener {
             skip(ServiceActivity::class.java)
         }
-
+        btn_demo25.setOnClickListener {
+            skip(BoradCastActivity::class.java)
+        }
 
         btn_jni.setOnClickListener {
             skip(JNIActivity::class.java)

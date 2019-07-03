@@ -17,6 +17,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".broadcast.BoradCastActivity">
+        </activity>
         <activity android:name=".service.ServiceActivity">
         </activity>
 
@@ -33,6 +35,12 @@
                 <action android:name="com.justcode.hxl.androidstudydemo.service.action.AIDL_SERVICE"/>
             </intent-filter>
         </service>
+        <receiver android:name=".broadcast.MyReceiver" android:enabled="true" android:exported="false">
+            <!--指定相应的action-->
+            <intent-filter>
+                <action android:name="com.justcode.hxl.androidstudydemo.broadcast_message"/>
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".content_provider.ContentProvider_wordsActivity">
         </activity>
