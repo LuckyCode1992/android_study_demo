@@ -38,5 +38,13 @@ class BoradCastActivity : AppCompatActivity() {
             unregisterReceiver(myReceiver2)
         }
 
+        btn_send_order.setOnClickListener {
+            val intent = Intent()
+            intent.action= "com.justcode.hxl.androidstudydemo.broadcast_order"
+            intent.`package` = "com.justcode.hxl.androidstudydemo"
+            intent.putExtra("msg", "有序广播")
+            sendOrderedBroadcast(intent,null)
+        }
+
     }
 }

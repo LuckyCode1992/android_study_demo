@@ -25,7 +25,12 @@
             android:layout_height="wrap_content"/>
     <Button
             android:id="@+id/btn_unregister"
-            android:text="反广播"
+            android:text="反注册广播"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_send_order"
+            android:text="发送有序广播"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

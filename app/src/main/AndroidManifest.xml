@@ -35,10 +35,32 @@
                 <action android:name="com.justcode.hxl.androidstudydemo.service.action.AIDL_SERVICE"/>
             </intent-filter>
         </service>
-        <receiver android:name=".broadcast.MyReceiver" android:enabled="true" android:exported="false">
+
+        <receiver
+                android:name=".broadcast.MyReceiver"
+                android:enabled="true"
+                android:exported="false">
             <!--指定相应的action-->
             <intent-filter>
                 <action android:name="com.justcode.hxl.androidstudydemo.broadcast_message"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.MyReceiver10">
+            <intent-filter android:priority="10">
+                <action android:name="com.justcode.hxl.androidstudydemo.broadcast_order">
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.MyReceiver20">
+            <intent-filter android:priority="20">
+                <action android:name="com.justcode.hxl.androidstudydemo.broadcast_order">
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.MyReceiver30">
+            <intent-filter android:priority="30">
+                <action android:name="com.justcode.hxl.androidstudydemo.broadcast_order">
+                </action>
             </intent-filter>
         </receiver>
 
