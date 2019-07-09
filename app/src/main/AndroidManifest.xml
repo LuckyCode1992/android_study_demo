@@ -17,6 +17,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".协程.CoroutinesActivity"/>
+        <activity android:name=".多媒体应用.MusicActivity">
+        </activity>
         <activity android:name=".broadcast.BoradCastActivity">
         </activity>
         <activity android:name=".service.ServiceActivity">
@@ -40,7 +43,8 @@
                 android:name=".broadcast.MyReceiver"
                 android:enabled="true"
                 android:exported="false">
-            <!--指定相应的action-->
+
+            <!-- 指定相应的action -->
             <intent-filter>
                 <action android:name="com.justcode.hxl.androidstudydemo.broadcast_message"/>
             </intent-filter>
