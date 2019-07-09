@@ -7,9 +7,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".多媒体应用.MusicActivity">
-<Button
-        android:id="@+id/btn_chose"
-        android:text="选择文件"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btn_get_music"
+            android:text="获取音乐文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 </LinearLayout>
