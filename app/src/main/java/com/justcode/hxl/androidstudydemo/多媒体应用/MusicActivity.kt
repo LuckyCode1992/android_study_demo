@@ -2,6 +2,7 @@ package com.justcode.hxl.androidstudydemo.多媒体应用
 
 
 import android.content.Context
+import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.justcode.hxl.androidstudydemo.R
+import kotlinx.android.synthetic.main.activity_demo4.*
 import kotlinx.android.synthetic.main.activity_music.*
 import kotlinx.android.synthetic.main.file_item.view.*
 
@@ -19,9 +21,10 @@ class MusicActivity : AppCompatActivity() {
     private val FILE_SELECT_CODE = 155
     var contentUtil: ContentUtil? = null
     val list: MutableList<FileItem> = ArrayList()
-    val player = MediaPlayer.create(this,R.raw.love_mail)
+    lateinit var player: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        player = MediaPlayer.create(this, R.raw.love_mail)
         contentUtil = ContentUtil(this)
         setContentView(R.layout.activity_music)
         val adapter = MyAdapter(list, this)
@@ -36,7 +39,9 @@ class MusicActivity : AppCompatActivity() {
         recycle.adapter = adapter
 
         adapter.itemClick = {
-
+            val intent = Intent(this, MusicPlayerActivity::class.java)
+            intent.putExtra("fileItem", it)
+            startActivity(intent)
         }
 
         btn_get_music.setOnClickListener {

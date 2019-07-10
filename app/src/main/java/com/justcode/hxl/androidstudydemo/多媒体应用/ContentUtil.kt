@@ -2,6 +2,8 @@ package com.justcode.hxl.androidstudydemo.多媒体应用
 
 import android.content.ContentResolver
 import android.content.Context
+import android.os.Parcel
+import android.os.Parcelable
 import android.provider.MediaStore
 import android.util.Log
 import kotlinx.coroutines.GlobalScope
@@ -52,7 +54,7 @@ class ContentUtil(var context: Context) {
 
                     filePath = cursor!!.getString(cursor!!.getColumnIndex(MediaStore.Images.ImageColumns.DATA))
 
-                    val fileItem = FileItem(imageId, filePath, fileName)
+                    val fileItem = FileItem(imageId, fileName, filePath)
 
                     Log.e("ryze_photo", "$imageId -- $fileName -- $filePath")
 
@@ -107,7 +109,7 @@ class ContentUtil(var context: Context) {
                     Log.e("ryze_music", "$fileId -- $fileName -- $filePath")
 
 
-                    val fileItem = FileItem(fileId, filePath, fileName)
+                    val fileItem = FileItem(fileId, fileName, filePath)
 
                     musics.add(fileItem)
 
@@ -160,7 +162,7 @@ class ContentUtil(var context: Context) {
 
                     Log.e("ryze_video", "$fileId -- $fileName -- $filePath")
 
-                    val fileItem = FileItem(fileId, filePath, fileName)
+                    val fileItem = FileItem(fileId, fileName, filePath)
 
                     videos.add(fileItem)
 
@@ -184,4 +186,26 @@ data class FileItem(
     var fileId: String? = null,
     var fileName: String? = null,
     var filePath: String? = null
-)
+) : Parcelable {
+    constructor(source: Parcel) : this(
+        source.readString(),
+        source.readString(),
+        source.readString()
+    )
+
+    override fun describeContents() = 0
+
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+        writeString(fileId)
+        writeString(fileName)
+        writeString(filePath)
+    }
+
+    companion object {
+        @JvmField
+        val CREATOR: Parcelable.Creator<FileItem> = object : Parcelable.Creator<FileItem> {
+            override fun createFromParcel(source: Parcel): FileItem = FileItem(source)
+            override fun newArray(size: Int): Array<FileItem?> = arrayOfNulls(size)
+        }
+    }
+}
