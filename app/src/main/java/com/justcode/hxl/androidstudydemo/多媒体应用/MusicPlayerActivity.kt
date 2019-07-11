@@ -23,11 +23,9 @@ import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.SeekBar
-import android.widget.TabHost
-import android.widget.TextView
+import android.widget.*
 import com.justcode.hxl.androidstudydemo.R
+import java.lang.Exception
 import kotlin.math.min
 
 class MusicPlayerActivity : AppCompatActivity() {
@@ -79,9 +77,59 @@ class MusicPlayerActivity : AppCompatActivity() {
             setuoBassboost()
             //初始化预设控制器
             setPresetReverb()
+            //初始化进度条
+            setSeekBar()
             //播放音乐
             mediaPlayer.start()
         }
+    }
+
+    private fun setSeekBar() {
+
+        val eqTititle = TextView(this)
+        eqTititle.text = "进度条"
+        layout.addView(eqTititle)
+        //创建一个水平排列的layout
+        val temLayout = LinearLayout(this)
+        temLayout.orientation = LinearLayout.HORIZONTAL
+        val minDBTextView = TextView(this)
+        minDBTextView.layoutParams =
+            ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        minDBTextView.text = "0"
+
+
+        val maxDBTextView = TextView(this)
+        maxDBTextView.layoutParams =
+            ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        maxDBTextView.text = mediaPlayer.duration.toString()
+
+        val layoutParams =
+            LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        layoutParams.weight = 1f
+
+
+        //定义seekbar作为调整工具
+        val bar = SeekBar(this)
+        bar.layoutParams = layoutParams
+        bar.max = mediaPlayer.duration
+        bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekbar: SeekBar?, progress: Int, p2: Boolean) {
+
+
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekbar: SeekBar) {
+                mediaPlayer.seekTo(seekbar.progress)
+            }
+
+        })
+        temLayout.addView(minDBTextView)
+        temLayout.addView(bar)
+        temLayout.addView(maxDBTextView)
+        layout.addView(temLayout)
     }
 
     private fun setupVisualizer() {
@@ -179,17 +227,73 @@ class MusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun setuoBassboost() {
+        bassBoost = BassBoost(0, mediaPlayer.audioSessionId)
+        bassBoost.enabled = true
+        val bbText = TextView(this)
+        bbText.text = "重低音"
+        layout.addView(bbText)
+        val bar = SeekBar(this)
+        //重低音的范围是0-1000
+        bar.max = 1000
+        bar.progress = 0
+        bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                bassBoost.setStrength(p1.toShort())
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
+
+        })
+        layout.addView(bar)
 
     }
 
     private fun setPresetReverb() {
+        presetReverb = PresetReverb(0, mediaPlayer.audioSessionId)
+        presetReverb.enabled = true
+        val prText = TextView(this)
+        prText.text = "音场"
+        layout.addView(prText)
+        for (i in 0 until equalizer.numberOfPresets) {
+            reverbNames.add(i.toShort())
+            reverbVals.add(equalizer.getPresetName(i.toShort()))
+
+        }
+        val sp = Spinner(this)
+        sp.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, reverbVals)
+        sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                try {
+                    presetReverb.preset = reverbNames[position]
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+            }
+
+        }
+        layout.addView(sp)
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.stop()
+    override fun onPause() {
+        super.onPause()
+        if (isFinishing && mediaPlayer != null) {
+            visualizer.release()
+            equalizer.release()
+            presetReverb.release()
+            mediaPlayer.release()
+        }
     }
+
 
 }
 
