@@ -19,19 +19,84 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".多媒体应用.MediaPlayerSurfaceActivity">
+        <activity android:name=".多媒体应用.MediaRecorderActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".多媒体应用.VideoViewActivity">
+        <activity android:name=".多媒体应用.MediaPlayerSurfaceActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".多媒体应用.MusicPlayerActivity">
+        <activity android:name=".多媒体应用.VideoViewActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".协程.CoroutinesActivity"/>
-        <activity android:name=".多媒体应用.MusicActivity">
+        <activity android:name=".多媒体应用.MusicPlayerActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".broadcast.BoradCastActivity">
+        <activity android:name=".协程.CoroutinesActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".多媒体应用.MusicActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".service.ServiceActivity">
+        <activity android:name=".broadcast.BoradCastActivity" android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".service.ServiceActivity" android:screenOrientation="portrait">
+        </activity>
+
+
+
+        <activity android:name=".content_provider.ContentProvider_wordsActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".gesture.Gestture2Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".gesture.Gesture1Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".数据存储和io.Main16Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".surface_view.Main15Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".surface_view.Main14Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".动画案例.Main13Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".canva_paint_path.Main12Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".canva_paint_path.Main11Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".canva_paint_path.Main10Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".canva_paint_path.Main9Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".资源文件xml相关.Main8Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".intent的部分功能.Main7Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".guolu.GuoluActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".fragment.Main6Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".mtxx.MTXXActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".calendarview.Main5Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".viewswitcher.Main4Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".progressbar系列.Main3Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".stackview.Main2Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ndkdemo.JNIActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".adapterviewfipper.Demo5Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".时钟相关view.Demo4Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".textview相关.Demo3Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".霓虹灯效果.Demo2Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".跟随手指的小球.Demo1Activity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
 
         <provider
                 android:name=".content_provider.DictProvider"
@@ -76,65 +141,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".content_provider.ContentProvider_wordsActivity">
-        </activity>
-        <activity android:name=".gesture.Gestture2Activity">
-        </activity>
-        <activity android:name=".gesture.Gesture1Activity">
-        </activity>
-        <activity android:name=".数据存储和io.Main16Activity">
-        </activity>
-        <activity android:name=".surface_view.Main15Activity">
-        </activity>
-        <activity android:name=".surface_view.Main14Activity">
-        </activity>
-        <activity android:name=".动画案例.Main13Activity">
-        </activity>
-        <activity android:name=".canva_paint_path.Main12Activity">
-        </activity>
-        <activity android:name=".canva_paint_path.Main11Activity">
-        </activity>
-        <activity android:name=".canva_paint_path.Main10Activity">
-        </activity>
-        <activity android:name=".canva_paint_path.Main9Activity">
-        </activity>
-        <activity android:name=".资源文件xml相关.Main8Activity">
-        </activity>
-        <activity android:name=".intent的部分功能.Main7Activity">
-        </activity>
-        <activity android:name=".guolu.GuoluActivity">
-        </activity>
-        <activity android:name=".fragment.Main6Activity">
-        </activity>
-        <activity android:name=".mtxx.MTXXActivity">
-        </activity>
-        <activity android:name=".calendarview.Main5Activity">
-        </activity>
-        <activity android:name=".viewswitcher.Main4Activity">
-        </activity>
-        <activity android:name=".progressbar系列.Main3Activity">
-        </activity>
-        <activity android:name=".stackview.Main2Activity">
-        </activity>
-        <activity android:name=".ndkdemo.JNIActivity">
-        </activity>
-        <activity android:name=".adapterviewfipper.Demo5Activity">
-        </activity>
-        <activity android:name=".时钟相关view.Demo4Activity">
-        </activity>
-        <activity android:name=".textview相关.Demo3Activity">
-        </activity>
-        <activity android:name=".霓虹灯效果.Demo2Activity">
-        </activity>
-        <activity android:name=".跟随手指的小球.Demo1Activity">
-        </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
