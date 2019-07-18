@@ -188,6 +188,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo30"
                     android:text="录音"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo31"
+                    android:text="拍照"/>
 
 
 
