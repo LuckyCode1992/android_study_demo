@@ -20,7 +20,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".多媒体应用.Camerav2Activity"   android:screenOrientation="portrait">
+        <activity
+                android:name=".tcp.TCPActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".openGL.OpenGlActivity">
+        </activity>
+        <activity
+                android:name=".多媒体应用.Camerav2Activity"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".多媒体应用.MediaRecorderActivity"

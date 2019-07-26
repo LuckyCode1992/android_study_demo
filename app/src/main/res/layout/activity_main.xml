@@ -193,6 +193,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/btn_demo31"
                     android:text="拍照"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo32"
+                    android:text="tcp"/>
 
 
 

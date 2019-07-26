@@ -23,6 +23,7 @@ import com.justcode.hxl.androidstudydemo.service.ServiceActivity
 import com.justcode.hxl.androidstudydemo.stackview.Main2Activity
 import com.justcode.hxl.androidstudydemo.surface_view.Main14Activity
 import com.justcode.hxl.androidstudydemo.surface_view.Main15Activity
+import com.justcode.hxl.androidstudydemo.tcp.TCPActivity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
 import com.justcode.hxl.androidstudydemo.动画案例.Main13Activity
@@ -137,6 +138,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo31.setOnClickListener {
             skip(Camerav2Activity::class.java)
+        }
+
+        btn_demo32.setOnClickListener {
+            skip(TCPActivity::class.java)
         }
 
 
