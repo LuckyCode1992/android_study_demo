@@ -20,6 +20,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".tcp.TCPFrameActivity" android:screenOrientation="portrait">
+        </activity>
         <activity
                 android:name=".tcp.TCPActivity"
                 android:screenOrientation="portrait">
