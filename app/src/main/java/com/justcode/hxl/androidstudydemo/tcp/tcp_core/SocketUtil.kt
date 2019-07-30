@@ -120,7 +120,7 @@ class SocketUtil {
             while (!isClose) {
                 try {
 
-                    Thread.sleep(1000)
+                    Thread.sleep(heartInterval)
 
                     sendHeart()
 
