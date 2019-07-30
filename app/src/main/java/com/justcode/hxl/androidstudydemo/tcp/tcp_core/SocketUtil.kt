@@ -2,11 +2,9 @@ package com.justcode.hxl.androidstudydemo.tcp.tcp_core
 
 import android.os.Looper
 import android.util.Log
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
-import java.io.OutputStream
+import java.io.*
 import java.net.Socket
+import java.nio.charset.Charset
 import java.util.concurrent.Executors
 
 class SocketUtil {
@@ -17,21 +15,19 @@ class SocketUtil {
     var openHeart: Boolean = false
     var maxOutTime: Long = Long.MAX_VALUE
     var heartInterval: Long = 5 * 1000
-    var heartPackage: ByteArray = byteArrayOf("LL".toByte())
+    var heartPackage = "心跳 ".toByteArray(Charset.forName("GBK"))
     var socket: Socket? = null
     var isConnected: Boolean = false
-    var inputStream: InputStream? = null
-    var inputStreamReader: InputStreamReader? = null
-    var bufferedReader: BufferedReader? = null
     var outputStream: OutputStream? = null
-    var buffer = ByteArray(1024)
     val fixedThreadPool = Executors.newFixedThreadPool(5)
     var heartThread: Thread? = null
     var receiverThread: Thread? = null
     //最后的发送时间
-    var last_send_time: Long = 0
+    var last_send_time: Long = Long.MAX_VALUE
     //最后的接收时间
-    var last_rec_time: Long = 0
+    var last_rec_time: Long = Long.MAX_VALUE
+
+    var isClose = false
 
 
     fun addIpPort(ip: String, port: Int): SocketUtil {
@@ -42,7 +38,7 @@ class SocketUtil {
 
 
     fun addListener(listerer: SocketListener): SocketUtil {
-        this.listener = listener
+        this.listener = listerer
 
         return this
     }
@@ -62,9 +58,10 @@ class SocketUtil {
         return this
     }
 
-    fun connect(): SocketUtil {
+    fun connect() {
+        isClose = false
         //断开原来的socket
-        disConnect()
+        disConnectStart()
         //建立新的socket
         //判断当前是在什么线程 如果在主线程，则在线程池中开启新线程
         if (Thread.currentThread() == Looper.getMainLooper().thread) {
@@ -76,19 +73,14 @@ class SocketUtil {
             connectStart()
         }
 
-        return this
     }
 
-   private fun connectStart() {
+    private fun connectStart() {
         try {
             socket = Socket(ip, port)
             socket?.let { socket ->
                 val isConnect = socket.isConnected
                 if (isConnect) {
-                    inputStream = socket.getInputStream()
-                    inputStreamReader = InputStreamReader(inputStream)
-                    bufferedReader = BufferedReader(inputStreamReader)
-
                     outputStream = socket.getOutputStream()
 
                     isConnected = true
@@ -113,7 +105,7 @@ class SocketUtil {
 
     }
 
-   private fun openHeartThread() {
+    private fun openHeartThread() {
         //打开心跳才继续
         if (!openHeart) {
             return
@@ -124,51 +116,59 @@ class SocketUtil {
         }
         heartThread = Thread(Runnable {
 
-            try {
-                Thread.sleep(1000)
+            //如果连接 则
+            while (!isClose) {
+                try {
 
-                /**
-                 * 当前时间距离上次发送时间（任意发送）的间隔大于最大心跳间隔时，发送心跳。
-                 */
-                if (System.currentTimeMillis() - last_send_time >= heartInterval) {
+                    Thread.sleep(1000)
+
                     sendHeart()
+
+                    /**
+                     * 如果当前时间 大于 最后一次接收时间+超时时间，则表示，连接超时，socket 断开了
+                     *
+                     * 目前这里不好模拟 后台发送数据，就是用app端发送数据为准
+                     */
+                    var isReconnect = false
+                    if (System.currentTimeMillis() > (last_send_time + maxOutTime)) {
+                        isReconnect = true
+                    } else {
+                        isReconnect = false
+                    }
+                    //如果断开，就重新连接服务器
+                    if (isReconnect) {
+                        Log.d(TAG, "onReconnect")
+                        listener?.onReconnected()
+                        disConnectStart()
+                        connectStart()
+                    }
+                } catch (e: Exception) {
+                    Log.d(TAG, Log.getStackTraceString(e))
                 }
-                /**
-                 * 如果当前时间 大于 最后一次接收时间+超时时间，则表示，连接超时，socket 断开了
-                 */
-                if (System.currentTimeMillis() > (last_rec_time + maxOutTime)) {
-                    isConnected = false
-                }
-                //如果断开，就重新连接服务器
-                if (!isConnected) {
-                    Log.d(TAG, "onReconnect")
-                    listener?.onReconnected()
-                    disConnect()
-                    connectStart()
-                }
-            } catch (e: Exception) {
-                Log.d(TAG, Log.getStackTraceString(e))
             }
+
 
         })
         heartThread?.start()
     }
 
 
-   private fun sendHeart() {
+    private fun sendHeart() {
         try {
             outputStream?.write(heartPackage)
             outputStream?.flush()
 
             Log.d(TAG, "sendHeart")
 
-            if (openHeart) {
-                last_send_time = System.currentTimeMillis()
-            }
 
             //判断套接字 读写 部分是否关闭，关闭则表示socket 断开
             if (socket?.isInputShutdown == true || socket?.isOutputShutdown == true) {
                 isConnected = false
+            } else {
+                isConnected = true
+            }
+            if (isConnected) {
+                last_send_time = System.currentTimeMillis()
             }
             listener?.onSendHeart()
         } catch (e: Exception) {
@@ -177,21 +177,25 @@ class SocketUtil {
         }
     }
 
-   private fun openReceiveThread() {
+    private fun openReceiveThread() {
         if (receiverThread != null) {
             return
         }
         receiverThread = Thread(Runnable {
             while (isConnected) {
                 try {
-                    var readLen = inputStream?.read(buffer) ?: 0
-                    if (readLen > 0) {
-                        var data = ByteArray(readLen)
-                        System.arraycopy(buffer, 0, data, 0, readLen)
-                        listener?.onReceived(data)
-                        Log.d(TAG, "onReceived" + ":" + String(data))
+                    val input = DataInputStream(socket?.inputStream)
+                    val b = ByteArray(1024)
+                    var len = 0
+                    var reponse = ""
+                    while (true) {
+                        len = input.read(b)
+                        reponse = String(b, 0, len, Charset.forName("GBK"))
+                        listener?.onReceived(reponse)
+                        Log.d(TAG, "onReceived:$reponse")
                         last_rec_time = System.currentTimeMillis()
                     }
+
                 } catch (e: Exception) {
                     Log.d(TAG, Log.getStackTraceString(e))
                     listener?.onError("读取数据出错了")
@@ -201,9 +205,12 @@ class SocketUtil {
         receiverThread?.start()
     }
 
-
     fun disConnect() {
+        isClose = true
+        disConnectStart()
+    }
 
+    private fun disConnectStart() {
         try {
             closeHeartThread()
             closeReceiverThread()
@@ -217,19 +224,6 @@ class SocketUtil {
                         }
                         if (!mSocket.isOutputShutdown) {
                             mSocket.shutdownOutput()
-                        }
-
-                        if (bufferedReader != null) {
-                            bufferedReader?.close()
-                            bufferedReader = null
-                        }
-                        if (inputStreamReader != null) {
-                            inputStreamReader?.close()
-                            inputStreamReader = null
-                        }
-                        if (inputStream != null) {
-                            inputStream?.close()
-                            inputStream = null
                         }
                         if (outputStream != null) {
                             outputStream?.close()
@@ -247,6 +241,7 @@ class SocketUtil {
             }
         } catch (e: Exception) {
             Log.d(TAG, Log.getStackTraceString(e))
+            listener?.onDisconnected()
         }
     }
 
