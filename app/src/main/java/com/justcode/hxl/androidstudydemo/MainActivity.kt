@@ -27,6 +27,7 @@ import com.justcode.hxl.androidstudydemo.tcp.TCPActivity
 import com.justcode.hxl.androidstudydemo.tcp.TCPFrameActivity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
 import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
+import com.justcode.hxl.androidstudydemo.传感器.SensorMangerActivity
 import com.justcode.hxl.androidstudydemo.动画案例.Main13Activity
 import com.justcode.hxl.androidstudydemo.协程.CoroutinesActivity
 import com.justcode.hxl.androidstudydemo.多媒体应用.*
@@ -146,6 +147,12 @@ class MainActivity : AppCompatActivity() {
         }
         btn_demo33.setOnClickListener {
             skip(TCPFrameActivity::class.java)
+        }
+        btn_demo33.setOnClickListener {
+            skip(TCPFrameActivity::class.java)
+        }
+        btn_demo34.setOnClickListener {
+            skip(SensorMangerActivity::class.java)
         }
 
 

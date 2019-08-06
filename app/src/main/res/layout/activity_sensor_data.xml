@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".传感器.SensorDataActivity">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_marginTop="20dp"
+                    android:text="方向传感器"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="绕Z轴转过的角度:   "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:id="@+id/tv_fangxiang_z"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕X轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_fangxiang_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Y轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_fangxiang_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <TextView
+                    android:text="陀螺仪传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Z轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_tuoluoyi_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕X轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_tuoluoyi_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Y轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_tuoluoyi_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <TextView
+                    android:text="磁场传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Z轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_cichang_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕X轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_cichang_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Y轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_cichang_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <TextView
+                    android:text="重力传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Z轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_zhongli_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕X轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_zhongli_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Y轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_zhongli_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                    android:text="线性加速传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Z轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_jiasu_z"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕X轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_jiasu_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="绕Y轴转过的角度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_jiasu_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+
+            <TextView
+                    android:text="温度传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="当前温度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_wendu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <TextView
+                    android:text="湿度传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="当前湿度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_shidu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                    android:text="光感传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="当前光强度:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_guang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <TextView
+                    android:text="压力传感器"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:text="当前压力:   "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_yali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
