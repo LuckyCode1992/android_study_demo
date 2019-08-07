@@ -21,6 +21,10 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
+                android:name=".传感器.CompassActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
                 android:name=".传感器.SensorDataActivity"
                 android:screenOrientation="portrait">
         </activity>

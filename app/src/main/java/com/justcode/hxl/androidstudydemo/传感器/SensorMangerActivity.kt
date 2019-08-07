@@ -123,6 +123,9 @@ class SensorMangerActivity : AppCompatActivity() {
         btn_data.setOnClickListener {
             start<SensorDataActivity>()
         }
+        btn_zhinanzhen.setOnClickListener {
+            start<CompassActivity>()
+        }
 
     }
 }
