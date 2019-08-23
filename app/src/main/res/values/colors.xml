@@ -3,4 +3,27 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="button_nor">#4359F4</color>
+    <color name="button_pressed">#3248E3</color>
+    <color name="prpgress_bar">#E2EDFB</color>
+    <color name="text">#323338</color>
+    <color name="button_inactive">#C9CAD1</color>
+    <color name="card_blue">#DAF0FF</color>
+    <color name="card_orange">#FFE7D9</color>
+    <color name="card_yellow">#FFFBC1</color>
+    <color name="card_text_blue">#3F93FF</color>
+    <color name="card_text_orange">#FFA190</color>
+    <color name="card_text_yellow">#FFAF00</color>
+    <color name="background">#F0F2F5</color>
+
+
+
+    <color name="green1">#34e8a6</color>
+    <color name="transparent">#00000000</color>
+    <color name="top_color2">#FFCECBCB</color>
+
+
 </resources>

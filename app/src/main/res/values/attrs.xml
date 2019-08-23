@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <declare-styleable name="CircleProgress">
+        <!--内圆颜色-->
+        <attr name="neiYuanColor" format="color"/>
+        <!--圆环半径-->
+        <attr name="ringRadius" format="dimension"/>
+        <!--圆环宽度-->
+        <attr name="ringWidth" format="dimension"/>
+        <!--圆环颜色-->
+        <attr name="ringColor" format="color"/>
+        <!--圆环进度颜色-->
+        <attr name="ringProgressColor" format="color"/>
+        <!--开始角度-->
+        <attr name="startAngle" format="integer"/>
+        <!--是否顺时针-->
+        <attr name="isClockwise" format="boolean"/>
+        <!--当前进度-->
+        <attr name="progress" format="float"/>
+        <!--总进度-->
+        <attr name="maxProgress" format="float"/>
+        <!--不绘制的度数-->
+        <attr name="disableAngle" format="integer"/>
+        <!--圆环进度是否为圆角-->
+        <attr name="isRound" format="boolean"/>
+        <!--是否设置动画-->
+        <attr name="useAnimation" format="boolean"/>
+        <!--动画执行时间-->
+        <attr name="duration" format="integer"/>
+        <!--进度百分比数值是否含小数-->
+        <!--<attr name="progressPercent" format="integer"/>-->
+        <attr name="isDecimal" format="boolean"/>
+        <!--小数点后几位-->
+        <attr name="decimalPointLength" format="integer"/>
+        <!--是否显示百分比-->
+        <attr name="isShowPercentText" format="boolean"/>
+        <!--文字颜色-->
+        <attr name="textColor" format="color"/>
+        <!--文字大小-->
+        <attr name="textSize" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>

@@ -13,6 +13,7 @@
             android:layout_height="match_parent"/>
 
     <RelativeLayout
+            android:id="@+id/rl_record"
             android:layout_marginBottom="20dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -31,10 +32,46 @@
                     android:text="Start"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
-                    android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="19dp"
+                    android:layout_alignParentTop="true"/>
         </RelativeLayout>
+
+        <com.justcode.hxl.androidstudydemo.多媒体应用.视频录制.progressbar.CircleProgress
+                android:id="@+id/progress"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:textSize="0sp"
+                app:decimalPointLength="1"
+                app:isShowPercentText="true"
+                app:progress="0"
+                app:maxProgress="100"
+                app:ringProgressColor="#419BF3"
+                app:disableAngle="0"
+                app:duration="30000"
+                app:isClockwise="true"
+                app:isDecimal="true"
+                app:isRound="true"
+                app:useAnimation="true"
+                app:ringColor="#FFCECBCB"
+                app:neiYuanColor="@color/transparent"
+                app:ringRadius="30dp"
+                app:ringWidth="10dp"
+                app:textColor="#419BF3"
+                />
     </RelativeLayout>
+
+    <TextView
+            android:id="@+id/btn_next"
+            android:visibility="gone"
+            style="@style/button_sure"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:text="Upload"
+            android:enabled="false"
+            android:background="@drawable/shape_button_normal"
+            />
 
 </RelativeLayout>

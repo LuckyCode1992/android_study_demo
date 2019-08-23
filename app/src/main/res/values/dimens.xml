@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="common">15sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="title">24dp</dimen>
+    <dimen name="primary_text">16dp</dimen>
+    <dimen name="text">14dp</dimen>
+    <dimen name="secondary_text">12dp</dimen>
+    <dimen name="tag">12dp</dimen>
 </resources>

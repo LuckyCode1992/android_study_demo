@@ -21,6 +21,8 @@ import android.view.View
 import android.view.WindowManager
 import com.justcode.hxl.androidstudydemo.R
 import com.justcode.hxl.androidstudydemo.permission.RxPermissions
+import com.justcode.hxl.progrect0.core.syntactic_sugar.gone
+import com.justcode.hxl.progrect0.core.syntactic_sugar.visible
 import kotlinx.android.synthetic.main.activity_video_record.*
 import java.io.File
 import java.util.*
@@ -115,6 +117,12 @@ class VideoRecordActivity : AppCompatActivity() {
                 tv_start.text = "Stop"
             }
         }
+        progress.setOnCircleProgressInter { scaleProgress, progress, max ->
+            Log.d("progress_", "scaleProgress:${scaleProgress}-progress:${progress}")
+            if (scaleProgress >= 100.0) {
+                stop()
+            }
+        }
     }
 
     fun start() {
@@ -122,6 +130,7 @@ class VideoRecordActivity : AppCompatActivity() {
             mStartedFlag = true
             //开始计时
 //            handler.postDelayed(runnable, maxSec * 10L)
+            progress.setProgress(100f)
             recorderReleaseEnable = true
             recorder = MediaRecorder().apply {
                 reset()
@@ -166,6 +175,7 @@ class VideoRecordActivity : AppCompatActivity() {
 
     fun stop() {
         if (mStartedFlag) {
+            progress.gone()
             mStartedFlag = false
             try {
                 recorder?.apply {
@@ -218,6 +228,7 @@ class VideoRecordActivity : AppCompatActivity() {
             setDisplay(surfaceHolder)
             setOnCompletionListener {
                 //播放解释后再次显示播放按钮
+
             }
         }
         try {
@@ -226,6 +237,9 @@ class VideoRecordActivity : AppCompatActivity() {
             Log.d(TAG, Log.getStackTraceString(e))
         }
         mediaPlayer?.start()
+
+        rl_record.gone()
+        btn_next.visible()
     }
 
     //停止播放录像
