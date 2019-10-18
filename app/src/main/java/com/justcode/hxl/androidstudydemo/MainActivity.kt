@@ -26,6 +26,7 @@ import com.justcode.hxl.androidstudydemo.surface_view.Main15Activity
 import com.justcode.hxl.androidstudydemo.tcp.TCPActivity
 import com.justcode.hxl.androidstudydemo.tcp.TCPFrameActivity
 import com.justcode.hxl.androidstudydemo.textview相关.Demo3Activity
+import com.justcode.hxl.androidstudydemo.viewpagerfragment.ViewpagerFragmentActivity
 import com.justcode.hxl.androidstudydemo.viewswitcher.Main4Activity
 import com.justcode.hxl.androidstudydemo.传感器.SensorMangerActivity
 import com.justcode.hxl.androidstudydemo.动画案例.Main13Activity
@@ -158,7 +159,9 @@ class MainActivity : AppCompatActivity() {
         btn_demo_video_record.setOnClickListener {
             skip(VideoRecordActivity::class.java)
         }
-
+        btn_demo35.setOnClickListener {
+            skip(ViewpagerFragmentActivity::class.java)
+        }
 
         btn_jni.setOnClickListener {
             skip(JNIActivity::class.java)

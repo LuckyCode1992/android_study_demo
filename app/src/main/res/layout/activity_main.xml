@@ -215,6 +215,12 @@
                     android:id="@+id/btn_demo34"
                     android:text="传感器"/>
 
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_demo35"
+                    android:text="viewpager+fragment"/>
+
 
 
             <Button

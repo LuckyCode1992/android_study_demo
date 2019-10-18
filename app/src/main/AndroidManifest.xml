@@ -20,10 +20,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".viewpagerfragment.ViewpagerFragmentActivity">
+        </activity>
         <activity
                 android:name=".多媒体应用.视频录制.VideoRecordActivity"
                 android:screenOrientation="portrait"/>
-
         <activity
                 android:name=".传感器.CompassActivity"
                 android:screenOrientation="portrait">
